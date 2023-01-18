@@ -31,8 +31,10 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@leeb" />
     <base target="_blank" />
-    <title>Four Thousand Weeks</title>
-    <style>
+    <title>4000 Learning</title>
+
+    <!-- STYLE STARTS HERE -->
+    <!--<style>
         @font-face {
             font-family: 'Playfair';
             src: url('PlayfairRomanVF.woff2') format('woff2');
@@ -335,8 +337,11 @@
             margin: 4rem auto;
             text-align: center;
         }
-    </style>
-    <script>
+    </style>-->
+
+    <!-- SCRIPT STARTS HERE -->
+
+    <!--<script>
         addEventListener('DOMContentLoaded', () => {
             // Constants
             const WEEK_MS = 1000 * 3600 * 24 * 7
@@ -739,14 +744,22 @@
                 ctx.fill()
             }
         })
-    </script>
+    </script>-->
+
+
 </head>
+
+
+
 <body>
+    <!-- Canvas is necessary for animations. Without it, the pages don't fly off the calendar, the dots don't appear. -->
     <div id="frame">
         <canvas></canvas>
     </div>
+
     <header>
         <div>
+            <!-- this div creates 'author stuff', in other words, it contains text and not a form or something -->
             <h1>
                 <mark>Four<br />Thousand<br />Weeks</mark>
             </h1>
@@ -763,16 +776,20 @@
             </p>
         </div>
         <div>
+            <!-- form alert. I don't know how to do this yet, but this one is a basic one. '-->
             <input type="date" id="birthday" autocomplete="bday" />
             <p id="cta">Scroll on...</p>
         </div>
     </header>
 
     <section id="aWeek">
+        <!-- Here is the calendar that scrolls by-->
         <div>
             <h2>We live our lives<br />week by week</h2>
             <aside aria-hidden="true">
+                <!-- aria is just for screen readers? Are you sure?  -->
                 <div>
+                    <!-- Is this a bit of sloppiness? Does he need this div here? -->
                     <div id="calendar">
                         <div weekday="Mon" date="8" class="faded"></div>
                         <div weekday="Sun" date="7" class="weekend"></div>

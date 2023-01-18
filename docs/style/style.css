@@ -1,0 +1,303 @@
+
+@font-face {
+    font-family: 'Playfair';
+    src: url('../PlayfairRomanVF.woff2') format('woff2');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair';
+    src: url('../PlayfairItalicVF.woff2') format('woff2');
+    font-style: italic;
+}
+
+:root {
+    --bg-color: #f2ebdb;
+    --mark-color: #3A85CEaa;
+    --baseline: clamp(16px, 5vmin, 32px);
+    --text-font-size: var(--baseline);
+    --text-letter-spacing: calc(var(--baseline) * -0.02);
+    --text-line-height: calc(var(--baseline) * 1.2);
+    --header-font-size: calc(var(--baseline) * 2.6);
+    --header-letter-spacing: calc(var(--baseline) * -0.12);
+    --header-line-height: calc(var(--baseline) * 2.4);
+    --section-width: min(100vmin - 0.5em, 800px);
+    color: #000000e9;
+    text-rendering: geometricPrecision;
+    hanging-punctuation: first allow-end last;
+    text-underline-position: from-font;
+    font-kerning: normal;
+    font-family: 'Playfair', 'Times New Roman', Times, serif;
+    font-size: var(--text-font-size);
+    font-variation-settings: 'wght' 400, 'wdth' 50, 'opsz' 30;
+    font-optical-sizing: none;
+    font-feature-settings: 'kern' 1, 'rlig' 1, 'dlig' 0, 'liga' 1, 'calt' 1, 'ss01' 0, 'ss02' 0, 'ss03' 0, 'ss04' 0, 'ss05' 0, 'ss06' 0, 'ss07' 0, 'ss08' 0, 'ss09' 0, 'ss10' 0, 'ss11' 0, 'ss12' 0, 'ss13' 0;
+    letter-spacing: var(--text-letter-spacing);
+    line-height: var(--text-line-height);
+}
+
+body {
+    margin: 0;
+    background: var(--bg-color);
+}
+
+a {
+    text-decoration-thickness: 0.5px;
+    text-decoration-color: #000000aa;
+    transition: text-decoration-color 0.3s ease-in-out;
+    color: inherit;
+}
+
+    a:hover,
+    a:focus {
+        text-decoration-thickness: 1px;
+        text-decoration-color: #0974e0;
+        color: initial;
+    }
+
+h1,
+h2 {
+    font-size: var(--header-font-size);
+    font-weight: inherit;
+    font-variation-settings: 'wght' 400, 'wdth' 50, 'opsz' 70;
+    letter-spacing: var(--header-letter-spacing);
+    line-height: var(--header-line-height);
+    margin: 1rem auto;
+}
+
+h3 {
+    font-size: inherit;
+    font-weight: normal;
+    font-variation-settings: 'wght' 650, 'wdth' 80, 'opsz' 30;
+    margin: 1rem auto;
+}
+
+small {
+    display: block;
+    font-size: max(14px, var(--text-font-size) * 0.5);
+    line-height: 1.2;
+}
+
+p {
+    margin: 1rem auto;
+}
+
+cite {
+    font-style: initial;
+}
+
+em {
+    font-style: italic;
+    font-variation-settings: 'wght' 500, 'wdth' 50, 'opsz' 22;
+}
+
+header {
+    min-height: calc(100vh - 4rem);
+    min-height: calc(100svh - 4rem);
+    margin: 2rem auto 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+    header > :last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+section {
+    min-height: calc(100vh - 6rem);
+    margin: 4rem auto 2rem;
+}
+
+footer {
+    margin: 4rem auto;
+}
+
+header,
+section,
+footer {
+    padding: 0 0.75rem;
+    width: var(--section-width);
+    box-sizing: border-box;
+}
+
+input {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 0;
+    border: none;
+    background: #ffffff99;
+}
+
+mark {
+    background: linear-gradient( 0, transparent 10%, var(--mark-color) 10%, var(--mark-color) 30%, transparent 30% );
+}
+
+::selection {
+    background-color: var(--mark-color);
+}
+
+figure {
+    margin: 1rem;
+}
+
+blockquote {
+    margin: 0;
+    position: relative;
+}
+
+    blockquote::before {
+        content: '“';
+        font-size: 200%;
+        margin: 0.12em 0.04em;
+        position: absolute;
+        right: 100%;
+        font-variation-settings: 'wght' 400, 'wdth' 50, 'opsz' 70;
+    }
+
+figcaption::before {
+    content: '—';
+}
+
+hr {
+    border: none;
+    border-bottom: solid 1px #00000066;
+    margin: 4rem 2rem;
+}
+
+#frame {
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    width: 100lvw;
+    height: 100vh;
+    height: 100lvh;
+}
+
+#cta {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+    transition: opacity 1s ease-out;
+}
+
+#aWeek {
+    height: calc(250vh - 12rem);
+    width: 100vw;
+    padding: 0;
+}
+
+    #aWeek > div:first-child {
+        position: sticky;
+        top: 20vh;
+        height: 80vh;
+        pointer-events: none;
+    }
+
+    #aWeek aside {
+        position: absolute;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        height: 100vh;
+    }
+
+        #aWeek h2,
+        #aWeek aside > div {
+            box-sizing: border-box;
+            width: var(--section-width);
+            padding: 0 0.75rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+#calendar {
+    position: relative;
+    width: 7rem;
+    height: 8rem;
+    background: #ece2cb;
+    border: 1px black solid;
+    box-shadow: 0 0.25rem 0.33rem 0.08rem #00000012;
+    display: flex;
+    flex-direction: row-reverse;
+    perspective: 100vh;
+    perspective-origin: bottom;
+}
+
+    #calendar > * {
+        user-select: none;
+    }
+
+    #calendar > div {
+        position: absolute;
+        width: 7rem;
+        height: 7rem;
+        bottom: 0;
+        border: 1px black solid;
+        border-top-style: dotted;
+        margin: -1px;
+        background: #f8f5ec;
+        transform-origin: top;
+        transform: rotate(0) translateY(0);
+        transition: transform 0.1s;
+    }
+
+        #calendar > div:before {
+            content: attr(weekday);
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            font-variation-settings: 'wght' 900, 'wdth' 150, 'opsz' 40;
+        }
+
+        #calendar > div:after {
+            content: attr(date);
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 200%;
+            font-variation-settings: 'wght' 400, 'wdth' 150, 'opsz' 80, 'lnum' 1;
+        }
+
+    #calendar .weekend {
+        background: #ffffcc;
+    }
+
+    #calendar .faded {
+        background: var(--bg-color);
+        color: #00000066;
+    }
+
+.fullscreen {
+    min-height: calc(250vh - 16rem);
+}
+
+    .fullscreen > div:first-child {
+        height: 150vh;
+        margin: 1rem 0;
+    }
+
+        .fullscreen > div:first-child > h2 {
+            margin: 0;
+            position: sticky;
+            top: calc(50vh - 4rem);
+        }
+
+.secnum {
+    font-feature-settings: 'lnum' 1;
+    font-variation-settings: 'wght' 900, 'wdth' 150, 'opsz' 50;
+}
+
+.endMark {
+    margin: 4rem auto;
+    text-align: center;
+}
