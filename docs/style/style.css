@@ -220,6 +220,7 @@ hr {
             margin-right: auto;
         }
 
+/* beginning of calendar stuff */
 #calendar {
     position: relative;
     width: 7rem;
@@ -228,16 +229,16 @@ hr {
     border: 1px black solid;
     box-shadow: 0 0.25rem 0.33rem 0.08rem #00000012;
     display: flex;
-    flex-direction: row-reverse;
+    /*flex-direction: row-reverse;*/
     perspective: 100vh;
     perspective-origin: bottom;
 }
 
-    #calendar > * {
+   /* #calendar > * {
         user-select: none;
-    }
+    }*/
 
-    #calendar > div {
+    /*#calendar > div {
         position: absolute;
         width: 7rem;
         height: 7rem;
@@ -249,20 +250,20 @@ hr {
         transform-origin: top;
         transform: rotate(0) translateY(0);
         transition: transform 0.1s;
-    }
+    }*/
 
         #calendar > div:before {
             content: attr(weekday);
             position: absolute;
-            top: 0.5rem;
-            left: 0.5rem;
+            top: 1rem;
+            left: 1rem;
             font-variation-settings: 'wght' 900, 'wdth' 150, 'opsz' 40;
         }
 
         #calendar > div:after {
             content: attr(date);
             position: absolute;
-            bottom: 1rem;
+            top: 1rem;
             right: 1rem;
             font-size: 200%;
             font-variation-settings: 'wght' 400, 'wdth' 150, 'opsz' 80, 'lnum' 1;
@@ -276,7 +277,7 @@ hr {
         background: var(--bg-color);
         color: #00000066;
     }
-
+    /* end of calendar stuff */
 .fullscreen {
     min-height: calc(250vh - 16rem);
 }
