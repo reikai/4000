@@ -145,23 +145,50 @@ figure {
     margin: 1rem;
 }
 
+/*    figure::before {
+        content: '"';
+        font-size: 200%;
+        margin: 0em -0.5em;
+        position: absolute;
+        font-variation-settings: 'wght' 400, 'wdth' 50, 'opsz' 70;
+    }*/
+
+/*    figcaption::before {
+        content: '"';
+        font-size: 200%;
+        margin: 0em -0.5em;
+        position: absolute;
+        font-variation-settings: 'wght' 400, 'wdth' 50, 'opsz' 70;
+    }*/
+
 blockquote {
     margin: 0;
     position: relative;
 }
 
     blockquote::before {
-        content: '“';
+        content: '"';
         font-size: 200%;
         margin: 0.12em 0.04em;
         position: absolute;
         right: 100%;
+        bottom: 85%;
         font-variation-settings: 'wght' 400, 'wdth' 50, 'opsz' 70;
     }
 
-figcaption::before {
-    content: '—';
-}
+    blockquote::after {
+        content: '"';
+        font-size: 200%;
+        margin: 0.12em 0.04em;
+        position: absolute;
+        bottom: 85%;
+        left: 100%;
+        font-variation-settings: 'wght' 400, 'wdth' 50, 'opsz' 70;
+    }
+
+/*figcaption::before {
+    content: '-';
+}*/
 
 hr {
     border: none;
@@ -229,16 +256,16 @@ hr {
     border: 1px black solid;
     box-shadow: 0 0.25rem 0.33rem 0.08rem #00000012;
     display: flex;
-    /*flex-direction: row-reverse;*/
+    flex-direction: row-reverse;
     perspective: 100vh;
     perspective-origin: bottom;
 }
 
-   /* #calendar > * {
+    #calendar > * {
         user-select: none;
-    }*/
+    }
 
-    /*#calendar > div {
+    #calendar > div {
         position: absolute;
         width: 7rem;
         height: 7rem;
@@ -250,20 +277,20 @@ hr {
         transform-origin: top;
         transform: rotate(0) translateY(0);
         transition: transform 0.1s;
-    }*/
+    }
 
         #calendar > div:before {
             content: attr(weekday);
             position: absolute;
-            top: 1rem;
-            left: 1rem;
+            top: 0.5rem;
+            left: 0.5rem;
             font-variation-settings: 'wght' 900, 'wdth' 150, 'opsz' 40;
         }
 
         #calendar > div:after {
             content: attr(date);
             position: absolute;
-            top: 1rem;
+            bottom: 1rem;
             right: 1rem;
             font-size: 200%;
             font-variation-settings: 'wght' 400, 'wdth' 150, 'opsz' 80, 'lnum' 1;
